@@ -1,0 +1,41 @@
+mkdir 16s_analysis
+cd 16s_analysis
+
+#validate mapping file
+validate_mapping_file.py -m ~/16s_analysis/map.txt -o validate_map -p -b
+
+multiple_join_paired_ends.py -i /location/of/data_files -o ~/16s_analysis/joined --read1_indicator _R1 --read2_indicator _R2
+
+#file formating
+bash remove-underscore.sh
+bash remove-R1.sh
+
+#pairing paired end reads and qualitfy filtering
+multiple_split_libraries_fastq.py -i ~/16s_analysis/joined -o ~/16s_analysis/filtered -m sampleid_by_file --include_input_dir_path --remove_filepath_in_name  --mapping_indicator ~/16s_analysis/map.txt
+
+#make sure your sample names are in the master seqs.fna file. The output test file should NOT be empty
+extract_seqs_by_sample_id.py -i seqs.fna -o test -s 04-5-05
+
+#build otu table
+pick_open_reference_otus.py -i ~/16s_analysis/filtered/seqs.fna -o ~/16s_analysis/otu  --parallel --jobs_to_start 16 -p 
+
+#summarize otu table
+biom summarize-table -i ~16s_analysis/otu/otu_table_mc2_w_tax_no_pynast_failures.biom
+
+#chimera filtering
+#identify chimeric sequences
+vsearch --uchime_ref ~/16s_analysis/otu/rep_set.fna --chimeras ~/16s_analysis/otu/chimeras.fasta --db /usr/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta 
+
+#remove them from otu table
+filter_otus_from_otu_table.py -i ~/16s_analysis/otu/otu_table_mc2_w_tax_no_pynast_failures.biom -o ~/16s_analysis/otu/otu_table_mc2_w_tax_no_pynast_failures_no_chimeras.biom -e ~/16s_analysis/otu/chimeras.fasta
+
+#remove them from rep_set_aligned and re-make tree
+filter_fasta.py -f ~/16s_analysis/otu/pynast_aligned_seqs/rep_set_aligned_pfiltered.fasta -o ~/16s_analysis/otu/rep_set_aligned_pfiltered_no_chimeras.fasta -a ~/16s_analysis/otu/chimeras.fasta -n
+
+make_phylogeny.py -i ~/16s_analysis/otu/rep_set_aligned_pfiltered_no_chimeras.fasta -o ~/16s_analysis/otu/rep_set_no_chimeras.tre
+
+#frequency filter otus; exact numbers are data specific
+filter_otus_from_otu_table.py -i ~/16s_analysis/otu/otu_table_mc2_w_tax_no_pynast_failures_no_chimeras.biom -o ~/16s_analysis/otu/otu_table_mc2_w_tax_no_pynast_failures_no_chimeras_frequency_filtered.biom --min_count 50 --min_samples 44
+
+#core diversity analyses
+core_diversity_analyses.py -o ~/16s_analysis/core_diversity -i ~/16s_analysis/otu/otu_table_mc2_w_tax_no_pynast_failures_no_chimeras_frequency_filtered.biom -m ~/16s_analysis/map.txt -t ~/16s_analysis/otu/rep_set_no_chimeras.tre -e 20000 -a 8
