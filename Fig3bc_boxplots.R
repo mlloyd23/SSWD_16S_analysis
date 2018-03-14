@@ -23,14 +23,7 @@ pheno_num <- phyloseq_to_deseq2(phylo, ~ individual + pn)
 pheno_num_results <- DESeq(pheno_num, test="Wald")
 pheno_num_res_0_1<- results(pheno_num_results, contrast=c("pn","0","1"),tidy=TRUE)
 head(pheno_num_res_0_1)
-poslog<-filter(pheno_num_res_0_1, log2FoldChange  > 0) %>%
-  arrange(padj, pvalue) %>%
-  tbl_df()
-print(tbl_df(poslog), n=23)
-
-goi <- poslog$row[1:6]
-goi
-
+goi<-c("830290","532994", "789777", "540617", "808031", "New.ReferenceOTU4597")
 
 tcounts <- t(log2((counts(pheno_num_results[goi, ], normalized=TRUE, replaced=FALSE)+.5))) %>%
   merge(colData(pheno_num_results), ., by="row.names") %>%
@@ -48,11 +41,12 @@ class(tcounts$gene)
 
 palette<-c("#ffffcc", "#7fcdbb", "#2c7fb8")
 
-
-
-labels <- c("532994"= c("532994\nPseudoalteromonas"), "540617"= "540617\nPseudoalteromonas",
-		"789777"= "789777\nPseudoalteromonas", "808031"= "808031\nPseudoalteromonas",
-		"830290"= "830290\nPseudoalteromonas", "New.ReferenceOTU4597"= "N.R.OTU4597\nPseudoalteromonas")
+labels <- c("532994"= "532994\nPseudoalteromonas\npadj=1.44e-5", 
+            "540617"= "540617\nPseudoalteromonas\npadj=0.0002",
+	        	"789777"= "789777\nPseudoalteromonas\npadj=1.44e-5", 
+	        	"808031"= "808031\nPseudoalteromonas\npadj=0.0015",
+		        "830290"= "830290\nPseudoalteromonas\npadj=1.44e-5", 
+	        	"New.ReferenceOTU4597"= "N.R.OTU4597\nPseudoalteromonas\npadj=0.0008")
 
 pdf("Beneficial_boxplot.pdf")
 ggplot(tcounts, aes(pn, expression, fill=pn)) + 
@@ -73,14 +67,8 @@ ggplot(tcounts, aes(pn, expression, fill=pn)) +
 dev.off()
 
 ###############Pathogenic
-neglog<-filter(pheno_num_res_0_1, log2FoldChange  < 0) %>%
-  arrange(padj, pvalue) %>%
-  tbl_df()
-print(tbl_df(neglog), n=23)
-
-neggoi <- neglog$row[1:6]
-neggoi
-
+neggoi<-c("748706", "New.ReferenceOTU3763", "81397", "575317", 
+          "New.ReferenceOTU256","541771")
 
 tcounts <- t(log2((counts(pheno_num_results[neggoi, ], normalized=TRUE, replaced=FALSE)+.5))) %>%
   merge(colData(pheno_num_results), ., by="row.names") %>%
@@ -98,11 +86,12 @@ class(tcounts$gene)
 
 palette<-c("#ffffcc", "#7fcdbb", "#2c7fb8")
 
-
-
-labels <- c("748706"= c("748706\nTenacibaculum"), "New.ReferenceOTU6124"= "N.R.OTU6124\nFlavobacteriaceae",
-		"New.CleanUp.ReferenceOTU1371945"= "N.CU.R.OTU1371945\nTenacibaculum", "317388"= "317388\nFlavobacteriaceae",
-		"79936"= "79936\nColwelliaceae", "New.ReferenceOTU4268"= "N.R.OTU4268\nNA")
+labels <- c("748706"= "748706\nTenacibaculum\npadj=1.78e-5",
+            "New.ReferenceOTU3763"= "N.R.OTU6124\nPhaeobacter\npadj=0.0001",
+		        "81397"= "81397\nPolaribacter\npadj=0.0002", 
+		        "575317"= "575317\nPhaeobacter\npadj=0.0003",
+	          "New.ReferenceOTU256"= "N.R.OTU256\nPhaeobacter\npadj=0.0003", 
+		        "541771"= "541771\nPhaeobacter\npadj=0.0007")
 
 pdf("Pathogenic_boxplot.pdf")
 ggplot(tcounts, aes(pn, expression, fill=pn)) + 
