@@ -1,6 +1,5 @@
 library(phyloseq)
 library(DESeq2)
-packageVersion(DESeq2)
 library(ggplot2)
 theme_set(theme_bw())
 library(dplyr)
@@ -23,15 +22,15 @@ sample_data(phylo_subset)$individual <- factor(sample_data(phylo_subset)$individ
 
 pheno <- phyloseq_to_deseq2(phylo_subset, ~ individual + Phenotype)
 
-pheno_results <- DESeq(pheno, test="Wald")
+pheno_test_deseq <- DESeq(pheno, test="Wald")
 
-pheno_res <- results(pheno_results)
+pheno_res <- results(pheno_test_deseq)
 summary(pheno_res)
 
-alpha <- 0.05
+alpha <- 0.1
 pheno_sigtab <- pheno_res[which(pheno_res$padj < alpha), ]
 pheno_sigtab <- cbind(as(pheno_sigtab, "data.frame"), as(tax_table(phylo)[rownames(pheno_sigtab), ], "matrix"))
-write.table(pheno_sigtab, "pheno_padj05.txt", sep="\t")
+write.table(pheno_sigtab, "pheno.txt", sep="\t")
 
 ##########################################
 ####Compare samples at day 0
@@ -44,10 +43,10 @@ day0_results <- results(day0_test_deseq)
 summary(day0_results)
 head(day0_results)
 
-alpha <- 0.05
+alpha <- 0.1
 day0_sigtab <- day0_results[which(day0_results$padj < alpha), ]
 day0_sigtab <- cbind(as(day0_sigtab, "data.frame"), as(tax_table(phylo)[rownames(day0_sigtab), ], "matrix"))
-write.table(day0_sigtab, "day0_padj05.txt", sep="\t")
+write.table(day0_sigtab, "day0.txt", sep="\t")
 
 ##########################################
 ####Before and after symptom onset
@@ -70,11 +69,10 @@ resultsINT<-results(full_model_less_reduced_model)
 summary(resultsINT)
 head(resultsINT)
 
-alpha <- 0.05
-int_sigtab_05 <- resultsINT[which(resultsINT$padj < alpha), ]
-int_sigtab_05 <- cbind(as(int_sigtab_05, "data.frame"), as(tax_table(phylo)[rownames(int_sigtab_05), ], "matrix"))
-nrow(int_sigtab_05)
-write.table(int_sigtab_05, "ANOVA_padj05.txt", sep="\t")
+alpha <- 0.1
+int_sigtab <- resultsINT[which(resultsINT$padj < alpha), ]
+int_sigtab <- cbind(as(int_sigtab, "data.frame"), as(tax_table(phylo)[rownames(int_sigtab), ], "matrix"))
+write.table(int_sigtab, "ANOVA.txt", sep="\t")
 
 ##########################################
 ####Testing for effect of phenotype number
@@ -92,7 +90,7 @@ pheno_num_res_1_2<- results(pheno_num_results, contrast=c("pn","1","2"))
 head(pheno_num_res_0_1)
 summary(pheno_num_res_0_1)
 
-alpha <- 0.05
+alpha <- 0.1
 results_table_0_1 <- pheno_num_res_0_1[which(pheno_num_res_0_1$padj < alpha), ]
 results_table_0_1 <- cbind(as(results_table_0_1, "data.frame"), as(tax_table(phylo)[rownames(results_table_0_1), ], "matrix"))
 write.table(results_table_0_1, "H0vsS1.txt", sep="\t")
