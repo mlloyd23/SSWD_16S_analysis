@@ -1,0 +1,521 @@
+SampleID	Day	individual	Phenotype	Pheno_num	pn	Final_phenotype	ANOVA					
+01-5-11	6	1	Dead	5	2	Sick	null					
+02-5-20	15	2	Dead	5	2	Sick	null					
+04-5-20	15	4	Dead	5	2	Sick	null					
+09-5-20	15	9	Dead	5	2	Sick	null					
+19-5-20	15	19	Dead	5	2	Sick	null					
+21-5-20	15	21	Dead	5	2	Sick	null					
+23-5-20	15	23	Dead	5	2	Sick	null					
+38-6-24	15	38	Dead	5	2	Sick	null					
+03-5-05	0	3	Healthy	0	0	Sick	Before					
+07-5-05	0	7	Healthy	0	0	Sick	Before					
+08-5-05	0	8	Healthy	0	0	Sick	null					
+08-5-08	3	8	Healthy	0	0	Sick	Before					
+09-5-05	0	9	Healthy	0	0	Sick	null					
+09-5-08	3	9	Healthy	0	0	Sick	null					
+09-5-11	6	9	Healthy	0	0	Sick	Before					
+10-5-05	0	10	Healthy	0	0	Healthy	Before					
+10-5-08	3	10	Healthy	0	0	Healthy	After					
+10-5-11	6	10	Healthy	0	0	Healthy	null					
+10-5-14	9	10	Healthy	0	0	Healthy	null					
+10-5-17	12	10	Healthy	0	0	Healthy	null					
+10-5-20	15	10	Healthy	0	0	Healthy	null					
+14-5-05	0	14	Healthy	0	0	Sick	Before					
+15-5-05	0	15	Healthy	0	0	Sick	null					
+15-5-08	3	15	Healthy	0	0	Sick	null					
+15-5-11	6	15	Healthy	0	0	Sick	null					
+15-5-14	9	15	Healthy	0	0	Sick	Before					
+16-5-05	0	16	Healthy	0	0	Sick	Before					
+18-5-05	0	18	Healthy	0	0	Sick	Before					
+19-5-05	0	19	Healthy	0	0	Sick	null					
+19-5-08	3	19	Healthy	0	0	Sick	null					
+19-5-14	9	19	Healthy	0	0	Sick	null					
+19-5-17	12	19	Healthy	0	0	Sick	null					
+20-5-05	0	20	Healthy	0	0	Sick	null					
+20-5-08	3	20	Healthy	0	0	Sick	null					
+20-5-11	6	20	Healthy	0	0	Sick	null					
+20-5-14	9	20	Healthy	0	0	Sick	null					
+20-5-17	12	20	Healthy	0	0	Sick	Before					
+21-5-05	0	21	Healthy	0	0	Sick	Before					
+22-5-05	0	22	Healthy	0	0	Sick	Before					
+24-5-05	0	24	Healthy	0	0	Healthy	Before					
+24-5-08	3	24	Healthy	0	0	Healthy	After					
+24-5-11	6	24	Healthy	0	0	Healthy	null					
+24-5-14	9	24	Healthy	0	0	Healthy	null					
+24-5-17	12	24	Healthy	0	0	Healthy	null					
+24-5-20	15	24	Healthy	0	0	Healthy	null					
+26-5-05	0	26	Healthy	0	0	Sick	Before					
+27-5-05	0	27	Healthy	0	0	Healthy	Before					
+27-5-08	3	27	Healthy	0	0	Healthy	After					
+27-5-11	6	27	Healthy	0	0	Healthy	null					
+27-5-14	9	27	Healthy	0	0	Healthy	null					
+27-5-17	12	27	Healthy	0	0	Healthy	null					
+27-5-20	15	27	Healthy	0	0	Healthy	null					
+28-5-05	0	28	Healthy	0	0	Sick	Before					
+29-5-05	0	29	Healthy	0	0	Sick	Before					
+31-6-09	0	31	Healthy	0	0	Healthy	Before					
+31-6-12	3	31	Healthy	0	0	Healthy	After					
+31-6-15	6	31	Healthy	0	0	Healthy	null					
+31-6-18	9	31	Healthy	0	0	Healthy	null					
+31-6-21	12	31	Healthy	0	0	Healthy	null					
+31-6-24	15	31	Healthy	0	0	Healthy	null					
+32-6-09	0	32	Healthy	0	0	Healthy	Before					
+32-6-12	3	32	Healthy	0	0	Healthy	After					
+32-6-15	6	32	Healthy	0	0	Healthy	null					
+32-6-18	9	32	Healthy	0	0	Healthy	null					
+32-6-21	12	32	Healthy	0	0	Healthy	null					
+32-6-24	15	32	Healthy	0	0	Healthy	null					
+33-6-09	0	33	Healthy	0	0	Healthy	Before					
+33-6-12	3	33	Healthy	0	0	Healthy	After					
+33-6-15	6	33	Healthy	0	0	Healthy	null					
+33-6-18	9	33	Healthy	0	0	Healthy	null					
+33-6-21	12	33	Healthy	0	0	Healthy	null					
+33-6-24	15	33	Healthy	0	0	Healthy	null					
+34-6-09	0	34	Healthy	0	0	Healthy	Before					
+34-6-12	3	34	Healthy	0	0	Healthy	After					
+34-6-15	6	34	Healthy	0	0	Healthy	null					
+34-6-18	9	34	Healthy	0	0	Healthy	null					
+34-6-21	12	34	Healthy	0	0	Healthy	null					
+34-6-24	15	34	Healthy	0	0	Healthy	null					
+35-6-09	0	35	Healthy	0	0	Healthy	Before					
+35-6-12	3	35	Healthy	0	0	Healthy	After					
+35-6-15	6	35	Healthy	0	0	Healthy	null					
+35-6-18	9	35	Healthy	0	0	Healthy	null					
+35-6-21	12	35	Healthy	0	0	Healthy	null					
+35-6-24	15	35	Healthy	0	0	Healthy	null					
+36-6-09	0	36	Healthy	0	0	Sick	Before					
+37-6-09	0	37	Healthy	0	0	Sick	null					
+37-6-12	3	37	Healthy	0	0	Sick	null					
+37-6-18	9	37	Healthy	0	0	Sick	null					
+38-6-09	0	38	Healthy	0	0	Sick	null					
+38-6-12	3	38	Healthy	0	0	Sick	null					
+38-6-21	12	38	Healthy	0	0	Sick	null					
+01-5-05	0	1	Sick	1	1	Sick	null					
+02-5-05	0	2	Sick	1	1	Sick	null					
+02-5-08	3	2	Sick	2	1	Sick	null					
+02-5-11	6	2	Sick	2	1	Sick	null					
+02-5-14	9	2	Sick	2	1	Sick	null					
+02-5-17	12	2	Sick	2	1	Sick	null					
+03-5-08	3	3	Sick	2	1	Sick	After					
+03-5-11	6	3	Sick	4	2	Sick	null					
+04-5-05	0	4	Sick	1	1	Sick	null					
+04-5-08	3	4	Sick	2	1	Sick	null					
+04-5-11	6	4	Sick	2	1	Sick	null					
+04-5-14	9	4	Sick	2	1	Sick	null					
+04-5-17	12	4	Sick	2	1	Sick	null					
+05-5-05	0	5	Sick	1	1	Sick	null					
+05-5-08	3	5	Sick	2	1	Sick	null					
+05-5-11	6	5	Sick	4	1	Sick	null					
+06-5-05	0	6	Sick	1	1	Sick	null					
+06-5-08	3	6	Sick	2	1	Sick	null					
+06-5-11	6	6	Sick	2	1	Sick	null					
+06-5-14	9	6	Sick	4	2	Sick	null					
+07-5-08	3	7	Sick	1	1	Sick	After					
+07-5-11	6	7	Sick	4	2	Sick	null					
+08-5-11	6	8	Sick	1	1	Sick	After					
+08-5-14	9	8	Sick	1	1	Sick	null					
+08-5-17	12	8	Sick	2	1	Sick	null					
+08-5-20	15	8	Sick	3	2	Sick	null					
+09-5-14	9	9	Sick	2	1	Sick	After					
+09-5-17	12	9	Sick	2	1	Sick	null					
+11-5-05	0	11	Sick	1	1	Sick	null					
+11-5-08	3	11	Sick	2	1	Sick	null					
+11-5-11	6	11	Sick	2	1	Sick	null					
+11-5-14	9	11	Sick	2	1	Sick	null					
+12-5-05	0	12	Sick	1	1	Sick	null					
+12-5-08	3	12	Sick	4	2	Sick	null					
+13-5-05	0	13	Sick	1	1	Sick	null					
+13-5-08	3	13	Sick	2	1	Sick	null					
+13-5-11	6	13	Sick	3	2	Sick	null					
+13-5-14	9	13	Sick	4	2	Sick	null					
+14-5-08	3	14	Sick	2	1	Sick	After					
+14-5-11	6	14	Sick	2	1	Sick	null					
+15-5-17	12	15	Sick	3	2	Sick	After					
+15-5-20	15	15	Sick	3	2	Sick	null					
+16-5-08	3	16	Sick	2	1	Sick	After					
+16-5-11	6	16	Sick	2	1	Sick	null					
+16-5-14	9	16	Sick	3	2	Sick	null					
+17-5-05	0	17	Sick	1	1	Sick	null					
+17-5-08	3	17	Sick	1	1	Sick	null					
+17-5-11	6	17	Sick	1	1	Sick	null					
+17-5-14	9	17	Sick	1	1	Sick	null					
+17-5-17	12	17	Sick	2	1	Sick	null					
+18-5-08	3	18	Sick	2	1	Sick	After					
+18-5-11	6	18	Sick	2	1	Sick	null					
+18-5-14	9	18	Sick	2	1	Sick	null					
+20-5-20	15	20	Sick	2	1	Sick	After					
+21-5-08	3	21	Sick	1	1	Sick	After					
+21-5-11	6	21	Sick	3	2	Sick	null					
+21-5-14	9	21	Sick	4	2	Sick	null					
+21-5-17	12	21	Sick	4	2	Sick	null					
+22-5-08	3	22	Sick	1	1	Sick	After					
+22-5-11	6	22	Sick	1	1	Sick	null					
+22-5-14	9	22	Sick	2	1	Sick	null					
+23-5-05	0	23	Sick	1	1	Sick	null					
+23-5-08	3	23	Sick	2	1	Sick	null					
+23-5-11	6	23	Sick	2	1	Sick	null					
+23-5-14	9	23	Sick	2	1	Sick	null					
+23-5-17	12	23	Sick	2	1	Sick	null					
+25-5-05	0	25	Sick	1	1	Sick	null					
+25-5-08	3	25	Sick	2	1	Sick	null					
+26-5-08	3	26	Sick	2	1	Sick	After					
+26-5-11	6	26	Sick	3	2	Sick	null					
+28-5-08	3	28	Sick	1	1	Sick	After					
+28-5-11	6	28	Sick	1	1	Sick	null					
+28-5-14	9	28	Sick	2	1	Sick	null					
+28-5-17	12	28	Sick	2	1	Sick	null					
+29-5-08	3	29	Sick	2	1	Sick	After					
+29-5-11	6	29	Sick	2	1	Sick	null					
+29-5-14	9	29	Sick	2	1	Sick	null					
+36-6-12	3	36	Sick	1	1	Sick	After					
+36-6-15	6	36	Sick	2	1	Sick	null					
+36-6-18	9	36	Sick	3	2	Sick	null					
+37-6-15	6	37	Sick	1	1	Sick	null					
+37-6-21	12	37	Sick	2	1	Sick	null					
+38-6-15	6	38	Sick	1	1	Sick	null					
+38-6-18	9	38	Sick	2	1	Sick	null					
+01-5-08	3	1	Sick	3	2	Sick	null					
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
